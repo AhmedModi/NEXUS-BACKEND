@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/compose-spec.json",
+  "title": "Docker Compose Specification (minimal vendor copy)",
+  "type": "object",
+  "properties": {
+    "version": { "type": ["string", "number"] },
+    "services": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "image": { "type": "string" },
+          "build": { "type": ["string", "object"] },
+          "command": { "type": ["string", "array"] },
+          "env_file": { "type": ["string", "array"] },
+          "environment": { "type": ["object", "array"] },
+          "ports": { "type": "array", "items": { "type": ["string", "number"] } },
+          "volumes": { "type": "array", "items": { "type": "string" } },
+          "depends_on": { "type": ["array", "object"] },
+          "healthcheck": { "type": ["object", "array"] }
+        },
+        "additionalProperties": true
+      }
+    },
+    "volumes": { "type": ["object", "array"] },
+    "networks": { "type": ["object", "array"] }
+  },
+  "additionalProperties": true
+}
