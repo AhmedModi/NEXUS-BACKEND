@@ -190,9 +190,8 @@ SPECTACULAR_SETTINGS = {
 }
 
 # CORS/CSRF settings
-CORS_ALLOWED_ORIGINS = [o.strip() for o in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if o.strip()]
-CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if o.strip()]
+# --- DEV MODE (easy testing) ---
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Security settings
 SECURE_SSL_REDIRECT = os.getenv('DJANGO_SECURE_SSL_REDIRECT', 'False').lower() == 'true'
