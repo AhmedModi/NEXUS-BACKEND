@@ -11,8 +11,6 @@ from shop.views import health_check
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # Root → API docs
     path('', RedirectView.as_view(url='/api/docs/', permanent=False)),
 
     # OpenAPI schema and docs
@@ -25,7 +23,7 @@ urlpatterns = [
     path('api/auth/jwt/refresh/', TokenRefreshView.as_view(), name='jwt-refresh'),
 
     # Users
-    path('api/users/', include('users.urls')),   # 👈 Hooked in here
+    path('api/users/', include('users.urls')),   # 👈 Add this
 
     # App routes
     path('api/', include('shop.urls')),
