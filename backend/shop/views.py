@@ -4,7 +4,10 @@ from django.db.models import Prefetch
 
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
+from django.http import JsonResponse
 
+def health_check(request):
+    return JsonResponse({"status": "ok"})
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.prefetch_related(
