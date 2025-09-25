@@ -204,4 +204,5 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ["*"]
 
-AUTH_USER_MODEL = "users.CustomUser"
+# OLD - remove or comment out
+# AUTH_USER_MODEL = "users.CustomUser"
