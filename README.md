@@ -167,11 +167,3 @@ python manage.py migrate
 * For deeper analysis, enable `pg_stat_statements`
 
 ---
-
-✅ This updated README now matches your project’s latest progress:
-
-* Includes **user registration endpoint**
-* Documents **all endpoints (auth, users, products, orders)**
-* Mentions **ER diagram** & **Swagger screenshot**
-
----
